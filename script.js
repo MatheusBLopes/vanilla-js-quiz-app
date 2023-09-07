@@ -30,7 +30,7 @@ exitBtn.onclock = () => {
 
 continueBtn.onclick = () => {
     rules.classList.remove("activeInfo")
-    quizBox.classList.add("activeInfo")
+    quizBox.classList.add("activeQuiz")
     show_questions(0)
     queCounter(1)
     startTimer(15)
@@ -42,7 +42,7 @@ restartQuiz.onclick = () => {
     resultBox.classList.remove("activeResult");
     timeValue = 15;
     queCount = 0;
-    queNumb = 1;
+    queNumber = 1;
     userRating = 0;
     widthValue = 0;
     show_questions(queCount)
@@ -65,12 +65,12 @@ question_counter_down = document.querySelector('footer .total_que');
 nextBtn.onclick = () => {
     if(queCount < questions.length - 1) {
         queCount++;
-        queNumb++;
+        queNumber++;
         show_questions(queCount);
-        queCounter(queNumb);
+        queCounter(queNumber);
         clearInterval(counter);
         clearInterval(counterLine);
-        startTimeLine(widthValue);
+        startTimerLine(widthValue);
         startTimer(timeValue);
         timeText.textContent = "Time Left"
         nextBtn.classList.remove("show")
@@ -187,11 +187,11 @@ function startTimer(time) {
 }
 
 function startTimerLine(time) {
-    counterLine = setInterval(timer, 29)
+    counterLine = setInterval(timer, 25)
     function timer() {
         time += 1
         timeLine.style.width = time + "px"
-        if (time > 549) {
+        if (time > 649) {
             clearTimeout(counterLine)
         }
     }
