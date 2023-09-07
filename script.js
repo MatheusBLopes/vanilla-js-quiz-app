@@ -34,7 +34,7 @@ continueBtn.onclick = () => {
     show_questions(0)
     queCounter(1)
     startTimer(15)
-    startTimeLine(0)
+    startTimerLine(0)
 }
 
 restartQuiz.onclick = () => {
@@ -84,7 +84,7 @@ nextBtn.onclick = () => {
 function show_questions(index) {
     const queText = document.querySelector('.que_text')
     let queTag = '<span>' + questions[index].numb + ". " + questions[index].question + '</span>'
-    let optionTag = '<div class="option"><span>'+ question[index].options[0] + '</span></div>'
+    let optionTag = '<div class="option"><span>'+ questions[index].options[0] + '</span></div>'
     + '<div class="option"><span>' + questions[index].options[1] + '</span></div>'
     + '<div class="option"><span>' + questions[index].options[2] + '</span></div>'
     + '<div class="option"><span>' + questions[index].options[3] + '</span></div>'
